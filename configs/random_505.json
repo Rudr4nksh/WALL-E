@@ -1,0 +1,684 @@
+{
+  "mission_name": "PIXAR WALL\u2022E : Procedural Wasteland (Seed 505)",
+  "description": "Procedurally generated 60x60 wasteland mission with guaranteed graph reachability and solar density.",
+  "map": {
+    "width": 60,
+    "height": 60,
+    "seed": 505,
+    "obstacles": [
+      {
+        "x": 2,
+        "y": 53
+      },
+      {
+        "x": 2,
+        "y": 54
+      },
+      {
+        "x": 3,
+        "y": 54
+      },
+      {
+        "x": 4,
+        "y": 54
+      },
+      {
+        "x": 4,
+        "y": 57
+      },
+      {
+        "x": 4,
+        "y": 58
+      },
+      {
+        "x": 5,
+        "y": 28
+      },
+      {
+        "x": 5,
+        "y": 29
+      },
+      {
+        "x": 5,
+        "y": 30
+      },
+      {
+        "x": 5,
+        "y": 31
+      },
+      {
+        "x": 5,
+        "y": 51
+      },
+      {
+        "x": 5,
+        "y": 52
+      },
+      {
+        "x": 5,
+        "y": 53
+      },
+      {
+        "x": 6,
+        "y": 48
+      },
+      {
+        "x": 6,
+        "y": 49
+      },
+      {
+        "x": 6,
+        "y": 50
+      },
+      {
+        "x": 6,
+        "y": 51
+      },
+      {
+        "x": 7,
+        "y": 30
+      },
+      {
+        "x": 7,
+        "y": 31
+      },
+      {
+        "x": 8,
+        "y": 48
+      },
+      {
+        "x": 9,
+        "y": 48
+      },
+      {
+        "x": 10,
+        "y": 45
+      },
+      {
+        "x": 10,
+        "y": 46
+      },
+      {
+        "x": 10,
+        "y": 47
+      },
+      {
+        "x": 10,
+        "y": 48
+      },
+      {
+        "x": 11,
+        "y": 41
+      },
+      {
+        "x": 12,
+        "y": 12
+      },
+      {
+        "x": 12,
+        "y": 13
+      },
+      {
+        "x": 12,
+        "y": 14
+      },
+      {
+        "x": 12,
+        "y": 15
+      },
+      {
+        "x": 12,
+        "y": 41
+      },
+      {
+        "x": 13,
+        "y": 41
+      },
+      {
+        "x": 14,
+        "y": 9
+      },
+      {
+        "x": 14,
+        "y": 41
+      },
+      {
+        "x": 15,
+        "y": 9
+      },
+      {
+        "x": 16,
+        "y": 9
+      },
+      {
+        "x": 17,
+        "y": 9
+      },
+      {
+        "x": 17,
+        "y": 10
+      },
+      {
+        "x": 17,
+        "y": 25
+      },
+      {
+        "x": 18,
+        "y": 25
+      },
+      {
+        "x": 19,
+        "y": 11
+      },
+      {
+        "x": 19,
+        "y": 53
+      },
+      {
+        "x": 19,
+        "y": 54
+      },
+      {
+        "x": 20,
+        "y": 11
+      },
+      {
+        "x": 21,
+        "y": 20
+      },
+      {
+        "x": 21,
+        "y": 21
+      },
+      {
+        "x": 21,
+        "y": 22
+      },
+      {
+        "x": 21,
+        "y": 52
+      },
+      {
+        "x": 21,
+        "y": 53
+      },
+      {
+        "x": 21,
+        "y": 54
+      },
+      {
+        "x": 23,
+        "y": 18
+      },
+      {
+        "x": 23,
+        "y": 27
+      },
+      {
+        "x": 24,
+        "y": 18
+      },
+      {
+        "x": 24,
+        "y": 27
+      },
+      {
+        "x": 25,
+        "y": 18
+      },
+      {
+        "x": 25,
+        "y": 27
+      },
+      {
+        "x": 26,
+        "y": 27
+      },
+      {
+        "x": 26,
+        "y": 48
+      },
+      {
+        "x": 26,
+        "y": 49
+      },
+      {
+        "x": 26,
+        "y": 50
+      },
+      {
+        "x": 26,
+        "y": 51
+      },
+      {
+        "x": 27,
+        "y": 25
+      },
+      {
+        "x": 28,
+        "y": 25
+      },
+      {
+        "x": 28,
+        "y": 43
+      },
+      {
+        "x": 28,
+        "y": 44
+      },
+      {
+        "x": 29,
+        "y": 25
+      },
+      {
+        "x": 31,
+        "y": 13
+      },
+      {
+        "x": 31,
+        "y": 33
+      },
+      {
+        "x": 32,
+        "y": 13
+      },
+      {
+        "x": 32,
+        "y": 33
+      },
+      {
+        "x": 34,
+        "y": 14
+      },
+      {
+        "x": 34,
+        "y": 15
+      },
+      {
+        "x": 34,
+        "y": 16
+      },
+      {
+        "x": 34,
+        "y": 17
+      },
+      {
+        "x": 34,
+        "y": 51
+      },
+      {
+        "x": 35,
+        "y": 30
+      },
+      {
+        "x": 35,
+        "y": 31
+      },
+      {
+        "x": 35,
+        "y": 51
+      },
+      {
+        "x": 36,
+        "y": 27
+      },
+      {
+        "x": 36,
+        "y": 51
+      },
+      {
+        "x": 37,
+        "y": 27
+      },
+      {
+        "x": 37,
+        "y": 36
+      },
+      {
+        "x": 37,
+        "y": 37
+      },
+      {
+        "x": 37,
+        "y": 51
+      },
+      {
+        "x": 39,
+        "y": 36
+      },
+      {
+        "x": 40,
+        "y": 36
+      },
+      {
+        "x": 41,
+        "y": 20
+      },
+      {
+        "x": 41,
+        "y": 36
+      },
+      {
+        "x": 42,
+        "y": 20
+      },
+      {
+        "x": 42,
+        "y": 36
+      },
+      {
+        "x": 43,
+        "y": 20
+      },
+      {
+        "x": 44,
+        "y": 5
+      },
+      {
+        "x": 44,
+        "y": 6
+      },
+      {
+        "x": 44,
+        "y": 20
+      },
+      {
+        "x": 46,
+        "y": 18
+      },
+      {
+        "x": 46,
+        "y": 19
+      },
+      {
+        "x": 46,
+        "y": 20
+      },
+      {
+        "x": 46,
+        "y": 21
+      },
+      {
+        "x": 46,
+        "y": 32
+      },
+      {
+        "x": 46,
+        "y": 33
+      },
+      {
+        "x": 46,
+        "y": 34
+      },
+      {
+        "x": 48,
+        "y": 49
+      },
+      {
+        "x": 48,
+        "y": 50
+      },
+      {
+        "x": 49,
+        "y": 55
+      },
+      {
+        "x": 49,
+        "y": 56
+      },
+      {
+        "x": 49,
+        "y": 57
+      },
+      {
+        "x": 50,
+        "y": 29
+      },
+      {
+        "x": 50,
+        "y": 30
+      },
+      {
+        "x": 50,
+        "y": 31
+      },
+      {
+        "x": 50,
+        "y": 32
+      },
+      {
+        "x": 52,
+        "y": 34
+      },
+      {
+        "x": 52,
+        "y": 35
+      },
+      {
+        "x": 52,
+        "y": 36
+      },
+      {
+        "x": 52,
+        "y": 37
+      },
+      {
+        "x": 54,
+        "y": 31
+      },
+      {
+        "x": 55,
+        "y": 31
+      }
+    ],
+    "solar_spots": [
+      {
+        "x": 8,
+        "y": 4
+      },
+      {
+        "x": 9,
+        "y": 19
+      },
+      {
+        "x": 5,
+        "y": 39
+      },
+      {
+        "x": 6,
+        "y": 55
+      },
+      {
+        "x": 25,
+        "y": 5
+      },
+      {
+        "x": 24,
+        "y": 22
+      },
+      {
+        "x": 25,
+        "y": 36
+      },
+      {
+        "x": 20,
+        "y": 51
+      },
+      {
+        "x": 37,
+        "y": 4
+      },
+      {
+        "x": 36,
+        "y": 22
+      },
+      {
+        "x": 34,
+        "y": 39
+      },
+      {
+        "x": 35,
+        "y": 49
+      },
+      {
+        "x": 54,
+        "y": 5
+      },
+      {
+        "x": 55,
+        "y": 19
+      },
+      {
+        "x": 55,
+        "y": 38
+      },
+      {
+        "x": 50,
+        "y": 54
+      }
+    ]
+  },
+  "agent_start": {
+    "x": 3,
+    "y": 4,
+    "label": "WALL-E Starting Depot"
+  },
+  "eve_target": {
+    "x": 52,
+    "y": 52,
+    "status": "DORMANT_PROBE_WAITING",
+    "directive": "VEGETATION_SCAN_READY"
+  },
+  "resource_budget": {
+    "initial_battery": 100.0,
+    "max_battery": 100.0,
+    "max_time_steps": 450,
+    "solar_recharge_rate": 25.0,
+    "action_costs": {
+      "move": 1.0,
+      "scan": 2.5,
+      "investigate": 1.5,
+      "idle": 0.2
+    }
+  },
+  "sensor_noise_sigma": 1.0,
+  "clues": [
+    {
+      "id": "CLUE-01-SCORCH",
+      "x": 44,
+      "y": 31,
+      "type": "scorch_mark",
+      "description": "Massive plasma landing crater on crushed BNL scrap towers! Matches the thrusters of EVE's scout drop-ship.",
+      "estimated_distance": 22.5,
+      "confidence_boost": 0.18
+    },
+    {
+      "id": "CLUE-02-RUBIKS-CUBE",
+      "x": 49,
+      "y": 54,
+      "type": "rubiks_cube",
+      "description": "Hal's favorite 3x3 Rubik's cube artifact perched in the scrap dunes.",
+      "estimated_distance": 3.6,
+      "confidence_boost": 0.18
+    },
+    {
+      "id": "CLUE-03-CASSETTE-TAPE",
+      "x": 2,
+      "y": 15,
+      "type": "cassette_tape",
+      "description": "Antique 'Hello, Dolly!' cassette tape found in the debris; magnetic tape points toward fresh hover trails.",
+      "estimated_distance": 62.2,
+      "confidence_boost": 0.18
+    },
+    {
+      "id": "CLUE-04-LIGHTBULB",
+      "x": 14,
+      "y": 25,
+      "type": "lightbulb",
+      "description": "Intact tungsten lightbulb found preserved in an old refrigerator; filament glows with static charge from EVE's passage.",
+      "estimated_distance": 46.6,
+      "confidence_boost": 0.18
+    },
+    {
+      "id": "CLUE-05-ION-TRAIL",
+      "x": 2,
+      "y": 0,
+      "type": "ion_trail",
+      "description": "Fresh ionized hover turbulence in the dusty air, ionized particles swirling down-canyon.",
+      "estimated_distance": 72.1,
+      "confidence_boost": 0.18
+    },
+    {
+      "id": "CLUE-06-FIRE-EXTINGUISHER",
+      "x": 40,
+      "y": 17,
+      "type": "fire_extinguisher",
+      "description": "Vintage red CO2 fire extinguisher; nozzle frost traces show sub-zero antigravity discharge.",
+      "estimated_distance": 37.0,
+      "confidence_boost": 0.18
+    },
+    {
+      "id": "CLUE-07-CRUSHED-CUBE",
+      "x": 7,
+      "y": 43,
+      "type": "crushed_cube",
+      "description": "Compacted scrap cube with laser-cut markings from EVE's high-yield plasma arm cannon.",
+      "estimated_distance": 45.9,
+      "confidence_boost": 0.18
+    },
+    {
+      "id": "CLUE-08-SPORK",
+      "x": 3,
+      "y": 20,
+      "type": "spork",
+      "description": "Collectible silver spork discovered half-buried near ancient BnL fast food debris.",
+      "estimated_distance": 58.5,
+      "confidence_boost": 0.18
+    },
+    {
+      "id": "CLUE-09-BNL-COOLER",
+      "x": 32,
+      "y": 48,
+      "type": "bnl_cooler",
+      "description": "Weathered red Buy n Large cooler chest containing vintage trinkets.",
+      "estimated_distance": 20.4,
+      "confidence_boost": 0.18
+    },
+    {
+      "id": "CLUE-10-BEACON-PING",
+      "x": 18,
+      "y": 46,
+      "type": "beacon_ping",
+      "description": "Direct ping response on WALL-E's radio compass matching Axiom Class-A probe telemetry.",
+      "estimated_distance": 34.5,
+      "confidence_boost": 0.18
+    },
+    {
+      "id": "CLUE-11-HUB-CAP",
+      "x": 7,
+      "y": 21,
+      "type": "hub_cap",
+      "description": "Reflective chrome vehicle hubcap embedded in sand, mirroring the high-altitude cloud cover.",
+      "estimated_distance": 54.6,
+      "confidence_boost": 0.18
+    },
+    {
+      "id": "CLUE-12-DIAMOND-RING",
+      "x": 56,
+      "y": 41,
+      "type": "diamond_ring",
+      "description": "Velvet jewelry case with intact diamond ring, discarded by WALL-E to keep the elegant case.",
+      "estimated_distance": 11.7,
+      "confidence_boost": 0.18
+    },
+    {
+      "id": "CLUE-13-BOOT-PLANT",
+      "x": 54,
+      "y": 51,
+      "type": "plant_signature",
+      "description": "THE LIVING SEEDLING! A fragile green plant growing inside a worn leather work boot. The directive objective!",
+      "estimated_distance": 2.2,
+      "confidence_boost": 0.35
+    }
+  ]
+}

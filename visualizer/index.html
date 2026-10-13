@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WALL•E : Earth Reconnaissance Telemetry</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Three.js 3D Engine & OrbitControls -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <!-- Pre-bundled mission data -->
+  <script src="missions_data.js"></script>
+</head>
+<body>
+
+  <!-- WebGL 3D Canvas Container -->
+  <div id="canvas-container"></div>
+
+  <!-- HUD Interface Overlay -->
+  <div id="ui-overlay">
+    
+    <!-- Big Mission Complete Popup Modal -->
+    <div id="mission-modal" class="mission-modal-overlay hidden interactive">
+      <div class="mission-modal-card">
+        <div class="modal-header-badge">DIRECTIVE ACCOMPLISHED</div>
+        <h2 class="modal-title">E.V.E. LOCATED // MISSION COMPLETE</h2>
+        <p class="modal-desc">WALL•E has successfully traversed the Earth wasteland, cataloged physical artifacts, and established contact with the Axiom vegetation probe.</p>
+
+        <div class="modal-metrics-grid">
+          <div class="modal-metric-card">
+            <div class="metric-label">EXPLORATION CYCLES</div>
+            <div id="modal-metric-steps" class="metric-val mono-data">251</div>
+          </div>
+          <div class="modal-metric-card">
+            <div class="metric-label">ARTIFACTS RECOVERED</div>
+            <div id="modal-metric-clues" class="metric-val mono-data text-emerald">13 / 13</div>
+          </div>
+          <div class="modal-metric-card">
+            <div class="metric-label">TARGET CONVERGENCE</div>
+            <div id="modal-metric-conf" class="metric-val mono-data text-cyan">99.0%</div>
+          </div>
+          <div class="modal-metric-card">
+            <div class="metric-label">FINAL SOLAR RESERVE</div>
+            <div id="modal-metric-battery" class="metric-val mono-data text-amber">48%</div>
+          </div>
+        </div>
+
+        <div class="modal-button-row">
+          <button id="btn-modal-random" class="btn-modal btn-modal-primary">🎲 NEW RANDOM MISSION</button>
+          <button id="btn-modal-replay" class="btn-modal btn-modal-secondary">▶ REPLAY MISSION</button>
+          <button id="btn-modal-inspect" class="btn-modal btn-modal-secondary">🔍 FREE CAMERA</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Action Telemetry Banner -->
+    <div id="action-banner" class="action-banner hidden">
+      <div class="banner-pulse"></div>
+      <span id="action-banner-icon" class="action-banner-icon">SYS</span>
+      <div class="action-banner-content">
+        <div id="action-banner-title" class="action-banner-title">DIRECTIVE ACTIVE</div>
+        <div id="action-banner-desc" class="action-banner-desc">Executing autonomous instruction...</div>
+      </div>
+    </div>
+    
+    <!-- Top Telemetry Header -->
+    <header class="top-bar interactive">
+      <div class="title-group">
+        <div class="brand-badge">BnL</div>
+        <div class="mission-meta">
+          <div class="mission-title">WALL•E <span class="title-tag">MISSION TELEMETRY</span></div>
+          <div class="mission-sub">DIRECTIVE A-113 // EARTH PROBE RECONNAISSANCE</div>
+        </div>
+      </div>
+
+      <div class="status-group">
+        <div class="status-card">
+          <span class="card-label">STATUS</span>
+          <span id="state-badge" class="state-badge exploring">EXPLORING</span>
+        </div>
+
+        <div class="status-card">
+          <span class="card-label">SOLAR RESERVE</span>
+          <div class="battery-wrapper">
+            <div class="battery-shell">
+              <div id="battery-fill" class="battery-fill"></div>
+            </div>
+            <span id="battery-val" class="mono-data">100%</span>
+          </div>
+        </div>
+
+        <div class="status-card">
+          <span class="card-label">MISSION CYCLE</span>
+          <span id="step-counter" class="mono-data text-amber">0 / 0</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Side Intelligence Panel -->
+    <aside id="side-panel" class="interactive">
+      <div class="panel-section">
+        <div class="section-header">
+          <span class="section-title">AUTONOMOUS REASONING</span>
+          <span class="live-indicator">LIVE</span>
+        </div>
+        <div class="thought-container">
+          <p id="thought-text">Telemetry established. Commencing environmental scan for Axiom probe carrier frequencies.</p>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <div class="section-header">
+          <span class="section-title">KINEMATIC TELEMETRY</span>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-cell">
+            <div class="stat-label">POSITION [X, Y]</div>
+            <div id="stat-pos" class="stat-value mono-data">(0, 0)</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-label">EVE ESTIMATE</div>
+            <div id="stat-inferred" class="stat-value mono-data">--</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-label">CONVERGENCE</div>
+            <div id="stat-conf" class="stat-value mono-data text-cyan">--%</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-label">ACTIVE DIRECTIVE</div>
+            <div id="stat-action" class="stat-value mono-data text-amber">BOOT</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-section clue-section">
+        <div class="section-header">
+          <span class="section-title">RECOVERED ARTIFACT CATALOG</span>
+        </div>
+        <div id="clue-list" class="clue-list"></div>
+      </div>
+    </aside>
+
+    <!-- Tactical Radar Map -->
+    <div id="mini-map-container" class="interactive">
+      <div class="mini-map-header">
+        <span class="map-title">TACTICAL RADAR</span>
+        <span id="map-target-status" class="map-status">SIGNAL LOCKED</span>
+      </div>
+      <canvas id="mini-map-canvas" width="220" height="220"></canvas>
+      <div class="mini-map-legend">
+        <span class="legend-item"><span class="dot walle-dot"></span>WALL•E</span>
+        <span class="legend-item"><span class="dot eve-dot"></span>EVE</span>
+        <span class="legend-item"><span class="dot clue-dot"></span>Relic</span>
+        <span class="legend-item"><span class="dot solar-dot"></span>Solar Pod</span>
+        <span class="legend-item"><span class="dot obs-dot"></span>Scrap Monolith</span>
+      </div>
+    </div>
+
+    <!-- Bottom Playback Control Deck -->
+    <footer class="control-deck interactive">
+      <div class="timeline-row">
+        <input type="range" id="timeline-slider" class="timeline-slider" min="0" max="100" value="0">
+      </div>
+
+      <div class="button-row">
+        <div class="btn-group transport-group">
+          <button id="btn-prev" class="btn btn-control" title="Previous Step">◀ Step</button>
+          <button id="btn-play" class="btn btn-control btn-primary" title="Play / Pause">▶ Play</button>
+          <button id="btn-next" class="btn btn-control" title="Next Step">Step ▶</button>
+          <button id="btn-random-map" class="btn btn-control text-amber" title="Generate New Procedural Wasteland">🎲 Randomize</button>
+          <div class="speed-wrap">
+            <span class="speed-label">SPEED</span>
+            <select id="speed-select" class="speed-select">
+              <option value="0.5">0.5×</option>
+              <option value="1.0" selected>1.0×</option>
+              <option value="2.0">2.0×</option>
+              <option value="4.0">4.0×</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="btn-group camera-group">
+          <span class="group-label">CAMERA</span>
+          <div class="segmented-control">
+            <button id="cam-chase" class="seg-btn active">Chase</button>
+            <button id="cam-orbit" class="seg-btn">Orbit</button>
+            <button id="cam-top" class="seg-btn">Overhead</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="game3d.js"></script>
+</body>
+</html>

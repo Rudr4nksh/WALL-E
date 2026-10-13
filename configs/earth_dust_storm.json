@@ -1,0 +1,76 @@
+{
+  "mission_name": "Earth Mission: Heavy Dust Storm",
+  "description": "A dust storm sweeps across the scrap canyons. Solar recharge is scarce and sensor readings have higher atmospheric distortion.",
+  "map": {
+    "width": 20,
+    "height": 20,
+    "seed": 101,
+    "obstacles": [
+      {"x": 3, "y": 3}, {"x": 3, "y": 4}, {"x": 3, "y": 5}, {"x": 3, "y": 6},
+      {"x": 6, "y": 7}, {"x": 7, "y": 7}, {"x": 8, "y": 7}, {"x": 9, "y": 7},
+      {"x": 10, "y": 10}, {"x": 11, "y": 10}, {"x": 12, "y": 10},
+      {"x": 14, "y": 4}, {"x": 14, "y": 5}, {"x": 15, "y": 5},
+      {"x": 16, "y": 12}, {"x": 16, "y": 13}, {"x": 17, "y": 13}
+    ],
+    "solar_spots": [
+      {"x": 6, "y": 3},
+      {"x": 12, "y": 8},
+      {"x": 17, "y": 15}
+    ]
+  },
+  "agent_start": {
+    "x": 1,
+    "y": 1,
+    "label": "Tread Repair Depot"
+  },
+  "eve_target": {
+    "x": 18,
+    "y": 17,
+    "status": "PROBE_SLEEP_MODE"
+  },
+  "resource_budget": {
+    "initial_battery": 80.0,
+    "max_battery": 100.0,
+    "max_time_steps": 140,
+    "solar_recharge_rate": 14.0,
+    "action_costs": {
+      "move": 2.5,
+      "scan": 5.0,
+      "investigate": 3.0,
+      "idle": 0.5
+    }
+  },
+  "sensor_noise_sigma": 2.8,
+  "clues": [
+    {
+      "id": "CLUE-STORM-01",
+      "x": 5,
+      "y": 4,
+      "type": "scorch_mark",
+      "description": "Faded scorch mark partially covered in dust sand.",
+      "bearing_hint": "NORTHEAST",
+      "estimated_distance": 17.5,
+      "confidence_boost": 0.20
+    },
+    {
+      "id": "CLUE-STORM-02",
+      "x": 11,
+      "y": 9,
+      "type": "ion_trail",
+      "description": "High-voltage static charge lingering on antenna tower.",
+      "bearing_hint": "NORTHEAST",
+      "estimated_distance": 10.6,
+      "confidence_boost": 0.30
+    },
+    {
+      "id": "CLUE-STORM-03",
+      "x": 17,
+      "y": 16,
+      "type": "beacon_ping",
+      "description": "Clear probe resonance ping cutting through storm interference.",
+      "bearing_hint": "NORTH",
+      "estimated_distance": 1.4,
+      "confidence_boost": 0.45
+    }
+  ]
+}
